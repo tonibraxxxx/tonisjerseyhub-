@@ -8,19 +8,15 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
+      background-color: #f4f4f4;
+      color: #000;
       text-align: center;
     }
 
     header {
-      background-color: #37003C;
+      background-color: #37003C; /* PL purple */
       padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: column;
+      color: white;
     }
 
     header img {
@@ -28,15 +24,16 @@
       margin-bottom: 10px;
     }
 
-    .header-text h1 {
+    header h1 {
       margin: 0;
-      color: #FFD700;
       font-size: 28px;
+      color: #FFD700; /* PL gold */
     }
 
-    .header-text p {
+    header p {
       margin: 5px 0 0;
-      color: #ccc;
+      font-size: 15px;
+      color: #ddd;
     }
 
     #searchBar {
@@ -45,7 +42,7 @@
       width: 80%;
       max-width: 400px;
       border-radius: 5px;
-      border: none;
+      border: 1px solid #ccc;
       font-size: 16px;
     }
 
@@ -58,29 +55,27 @@
     }
 
     .jersey-card {
-      background-color: rgba(0,0,0,0.85);
       border-radius: 10px;
       padding: 15px;
       width: 220px;
-      box-shadow: 0 0 8px rgba(255,255,255,0.1);
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      color: white;
     }
 
     .jersey-card img {
       width: 100%;
       border-radius: 8px;
-      border: 2px solid #333;
+      border: 2px solid #fff;
     }
 
     .jersey-card h3 {
       margin-top: 10px;
       font-size: 18px;
-      color: #FFD700;
     }
 
     .jersey-card p {
       margin: 4px 0;
       font-size: 14px;
-      color: #ccc;
     }
 
     .buy-btn {
@@ -93,94 +88,165 @@
       cursor: pointer;
       width: 100%;
       font-weight: bold;
+      font-size: 16px;
     }
 
     footer {
       margin-top: 40px;
       padding: 15px;
       font-size: 14px;
-      background-color: rgba(0, 0, 0, 0.85);
-      color: #aaa;
+      background-color: #37003C;
+      color: #ccc;
     }
 
     footer a {
-      color: #0af;
+      color: #FFD700;
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      header p {
+        font-size: 13px;
+      }
+
+      #searchBar {
+        width: 90%;
+        font-size: 14px;
+      }
+
       .jersey-card {
         width: 90%;
+        padding: 10px;
+      }
+
+      .jersey-card h3 {
+        font-size: 16px;
+      }
+
+      .jersey-card p {
+        font-size: 13px;
+      }
+
+      .buy-btn {
+        font-size: 14px;
+        padding: 12px;
+      }
+
+      footer {
+        font-size: 13px;
+        padding: 10px;
       }
     }
+
+    /* Background colors per team */
+    .arsenal { background-color: #da291c; }
+    .manutd { background-color: #c70101; }
+    .chelsea { background-color: #034694; }
+    .mancity { background-color: #6cabdd; color: #000; }
+    .liverpool { background-color: #d00027; }
+    .tottenham { background-color: #132257; }
+    .newcastle { background-color: #241F20; }
   </style>
 </head>
 <body>
 
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League Logo">
-    <div class="header-text">
-      <h1>Toni's Jersey Hub Nairobi</h1>
-      <p>Official Football Jerseys | Based in Kahawa Sukari</p>
-    </div>
+    <h1>Toni's Jersey Hub Nairobi</h1>
+    <p>Official EPL Jerseys | Kahawa Sukari Delivery</p>
   </header>
 
   <input type="text" id="searchBar" placeholder="Search by team or color...">
 
   <section class="jersey-grid" id="jerseyGrid">
-    <div class="jersey-card" data-club="Arsenal" data-color="Red">
+
+    <!-- Arsenal -->
+    <div class="jersey-card arsenal" data-club="Arsenal" data-color="Red">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arsenal_FC_home_jersey_2023-24.png" alt="Arsenal Jersey">
       <h3>Arsenal</h3>
       <p>Color: Red</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Arsenal%20jersey" target="_blank">
-        <button class="buy-btn">Buy on WhatsApp</button>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Arsenal%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
       </a>
     </div>
 
-    <div class="jersey-card" data-club="Manchester United" data-color="Red">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Manchester_United_2023-24_jersey.png" alt="Man United Jersey">
+    <!-- Man Utd -->
+    <div class="jersey-card manutd" data-club="Manchester United" data-color="Red">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Manchester_United_2023-24_jersey.png" alt="Man Utd Jersey">
       <h3>Manchester United</h3>
       <p>Color: Red</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Manchester%20United%20jersey" target="_blank">
-        <button class="buy-btn">Buy on WhatsApp</button>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Manchester%20United%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
       </a>
     </div>
 
-    <div class="jersey-card" data-club="Chelsea" data-color="Blue">
+    <!-- Chelsea -->
+    <div class="jersey-card chelsea" data-club="Chelsea" data-color="Blue">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Chelsea_FC_2023-24_jersey.png" alt="Chelsea Jersey">
       <h3>Chelsea</h3>
       <p>Color: Blue</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Chelsea%20jersey" target="_blank">
-        <button class="buy-btn">Buy on WhatsApp</button>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Chelsea%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
       </a>
     </div>
 
-    <div class="jersey-card" data-club="Manchester City" data-color="Sky Blue">
+    <!-- Man City -->
+    <div class="jersey-card mancity" data-club="Manchester City" data-color="Sky Blue">
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Manchester_City_2023-24_home_kit.png" alt="Man City Jersey">
       <h3>Manchester City</h3>
       <p>Color: Sky Blue</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Man%20City%20jersey" target="_blank">
-        <button class="buy-btn">Buy on WhatsApp</button>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Manchester%20City%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
       </a>
     </div>
 
-    <div class="jersey-card" data-club="Liverpool" data-color="Red">
+    <!-- Liverpool -->
+    <div class="jersey-card liverpool" data-club="Liverpool" data-color="Red">
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Liverpool_2023-24_jersey.png" alt="Liverpool Jersey">
       <h3>Liverpool</h3>
       <p>Color: Red</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Liverpool%20jersey" target="_blank">
-        <button class="buy-btn">Buy on WhatsApp</button>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Liverpool%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
       </a>
     </div>
+
+    <!-- Spurs -->
+    <div class="jersey-card tottenham" data-club="Tottenham" data-color="Navy">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Tottenham_2023-24_jersey.png" alt="Spurs Jersey">
+      <h3>Tottenham Hotspur</h3>
+      <p>Color: Navy Blue</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Tottenham%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
+      </a>
+    </div>
+
+    <!-- Newcastle -->
+    <div class="jersey-card newcastle" data-club="Newcastle" data-color="Black & White">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Newcastle_2023-24_jersey.png" alt="Newcastle Jersey">
+      <h3>Newcastle United</h3>
+      <p>Color: Black & White</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I%20want%20the%20Newcastle%20jersey" target="_blank">
+        <button class="buy-btn">Order via WhatsApp</button>
+      </a>
+    </div>
+
   </section>
 
   <footer>
-    &copy; 2025 Premier League Fan Site | Website by <a href="mailto:karaniwahome@gmail.com">karaniwahome@gmail.com</a> |
+    &copy; 2025 Premier League Fan Page | Website by 
+    <a href="mailto:karaniwahome@gmail.com">karaniwahome@gmail.com</a> | 
     <a href="https://twitter.com/tonibraxxxxx" target="_blank">@tonibraxxxxx</a>
   </footer>
 
