@@ -1,94 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JerseyHub Kenya</title>
+  <meta charset="UTF-8">
+  <title>JerseyHub Nairobi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Pep_Guardiola_2023.jpg'), 
-                        url('https://upload.wikimedia.org/wikipedia/commons/7/7f/Mikel_Arteta_2022.jpg');
-      background-position: left center, right center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-color: #37003C;
-      background-blend-mode: soft-light;
-      color: white;
+      font-family: Arial, sans-serif;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Pep_Guardiola_2019.jpg'),
+                  url('https://upload.wikimedia.org/wikipedia/commons/6/67/Mikel_Arteta_2021.jpg');
+      background-size: cover;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      text-align: center;
     }
 
     header {
-      text-align: center;
+      background: rgba(0,0,0,0.8);
       padding: 20px;
-      background-color: #1E1E1E;
     }
 
     header h1 {
+      margin: 0;
       color: #FFD700;
-      margin-bottom: 5px;
     }
 
-    .search-bar {
-      text-align: center;
-      margin: 20px;
-    }
-
-    .search-bar input {
+    #searchBar {
+      margin: 20px auto;
       padding: 10px;
-      width: 300px;
+      width: 80%;
+      max-width: 400px;
       border-radius: 5px;
       border: none;
-      outline: none;
+      font-size: 16px;
     }
 
     .jersey-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
       padding: 20px;
+      gap: 20px;
     }
 
     .jersey-card {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(30,30,30,0.95);
       border-radius: 10px;
       padding: 15px;
       width: 220px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .jersey-card:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
 
     .jersey-card img {
       width: 100%;
-      height: auto;
+      border-radius: 8px;
+      border: 2px solid #333;
+    }
+
+    .jersey-card h3 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .jersey-card p {
+      margin: 5px 0;
+      font-size: 14px;
     }
 
     .buy-btn {
-      background-color: #28a745;
+      margin-top: 10px;
+      background-color: #25D366;
       color: white;
       border: none;
       padding: 10px;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px;
+      width: 100%;
+      font-weight: bold;
     }
 
     footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 20px;
-      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
       font-size: 14px;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #aaa;
     }
 
-    a {
+    footer a {
       color: #0af;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .jersey-card {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -96,92 +105,84 @@
 
   <header>
     <h1>JerseyHub Nairobi</h1>
-    <p>Official EPL Jerseys | Delivery in Kahawa Sukari & Nairobi</p>
+    <p>Official EPL Jerseys | Order from Kahawa Sukari</p>
   </header>
 
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search by club or color...">
-  </div>
+  <input type="text" id="searchBar" placeholder="Search by team or color...">
 
-  <div class="jersey-grid" id="jerseyGrid">
-    <!-- Jerseys will load here -->
-  </div>
+  <section class="jersey-grid" id="jerseyGrid">
+    <div class="jersey-card" data-club="Arsenal" data-color="Red">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arsenal_FC_home_jersey_2023-24.png" alt="Arsenal Jersey">
+      <h3>Arsenal</h3>
+      <p>Color: Red</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Arsenal%20jersey" target="_blank">
+        <button class="buy-btn">Buy on WhatsApp</button>
+      </a>
+    </div>
+
+    <div class="jersey-card" data-club="Manchester United" data-color="Red">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Manchester_United_2023-24_jersey.png" alt="Manchester United Jersey">
+      <h3>Manchester United</h3>
+      <p>Color: Red</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Manchester%20United%20jersey" target="_blank">
+        <button class="buy-btn">Buy on WhatsApp</button>
+      </a>
+    </div>
+
+    <div class="jersey-card" data-club="Chelsea" data-color="Blue">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Chelsea_FC_2023-24_jersey.png" alt="Chelsea Jersey">
+      <h3>Chelsea</h3>
+      <p>Color: Blue</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Chelsea%20jersey" target="_blank">
+        <button class="buy-btn">Buy on WhatsApp</button>
+      </a>
+    </div>
+
+    <div class="jersey-card" data-club="Manchester City" data-color="Sky Blue">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Manchester_City_2023-24_home_kit.png" alt="Manchester City Jersey">
+      <h3>Manchester City</h3>
+      <p>Color: Sky Blue</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Manchester%20City%20jersey" target="_blank">
+        <button class="buy-btn">Buy on WhatsApp</button>
+      </a>
+    </div>
+
+    <div class="jersey-card" data-club="Liverpool" data-color="Red">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Liverpool_2023-24_jersey.png" alt="Liverpool Jersey">
+      <h3>Liverpool</h3>
+      <p>Color: Red</p>
+      <p>Price: Ksh 3,000</p>
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Liverpool%20jersey" target="_blank">
+        <button class="buy-btn">Buy on WhatsApp</button>
+      </a>
+    </div>
+
+    <!-- Add more jerseys as needed -->
+
+  </section>
 
   <footer>
-    Website developed by <a href="mailto:karaniwahome@gmail.com">Karani Wahome</a> • Powered by GitHub ⚽
+    Website developed by <a href="mailto:karaniwahome@gmail.com">karaniwahome@gmail.com</a> |
+    <a href="https://twitter.com/tonibraxxxxx" target="_blank">@tonibraxxxxx</a><br>
+    Background: Pep Guardiola & Mikel Arteta | Based in Kahawa Sukari ⚽
   </footer>
 
   <script>
-    const jerseys = [
-      {
-        team: "Arsenal",
-        color: "Red White",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/87/Arsenal_FC_home_jersey_2023-24.png"
-      },
-      {
-        team: "Chelsea",
-        color: "Blue",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/47/Chelsea_home_kit_2023-24.png"
-      },
-      {
-        team: "Manchester City",
-        color: "Sky Blue",
-        img: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Manchester_City_home_kit_2023-24.png"
-      },
-      {
-        team: "Manchester United",
-        color: "Red",
-        img: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Manchester_United_home_kit_2023-24.png"
-      },
-      {
-        team: "Liverpool",
-        color: "Red",
-        img: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Liverpool_home_kit_2023-24.png"
-      },
-      {
-        team: "Tottenham Hotspur",
-        color: "White",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/80/Tottenham_Hotspur_home_kit_2023-24.png"
-      },
-      {
-        team: "Newcastle United",
-        color: "Black White",
-        img: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Newcastle_United_home_kit_2023-24.png"
-      },
-      {
-        team: "Aston Villa",
-        color: "Claret Blue",
-        img: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Aston_Villa_home_kit_2023-24.png"
-      }
-    ];
+    const searchBar = document.getElementById('searchBar');
+    const cards = document.querySelectorAll('.jersey-card');
 
-    const container = document.getElementById("jerseyGrid");
-    const searchInput = document.getElementById("searchInput");
-
-    function loadJerseys() {
-      container.innerHTML = "";
-      const keyword = searchInput.value.toLowerCase();
-
-      jerseys.filter(j => 
-        j.team.toLowerCase().includes(keyword) || 
-        j.color.toLowerCase().includes(keyword)
-      ).forEach(j => {
-        container.innerHTML += `
-          <div class="jersey-card">
-            <img src="${j.img}" alt="${j.team} Jersey" />
-            <h3>${j.team}</h3>
-            <p>Color: ${j.color}</p>
-            <p>Price: Ksh 3,000</p>
-            <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20${encodeURIComponent(j.team)}%20jersey" target="_blank">
-              <button class="buy-btn">Order on WhatsApp</button>
-            </a>
-          </div>
-        `;
+    searchBar.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      cards.forEach(card => {
+        const club = card.dataset.club.toLowerCase();
+        const color = card.dataset.color.toLowerCase();
+        card.style.display = club.includes(query) || color.includes(query) ? "block" : "none";
       });
-    }
-
-    searchInput.addEventListener("input", loadJerseys);
-    window.onload = loadJerseys;
+    });
   </script>
 
 </body>
