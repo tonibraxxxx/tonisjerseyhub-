@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JerseyHub Nairobi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Pep_Guardiola_2019.jpg'),
+      background: linear-gradient(rgba(10,10,30,0.9), rgba(10,10,30,0.9)),
+                  url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Pep_Guardiola_2019.jpg'),
                   url('https://upload.wikimedia.org/wikipedia/commons/6/67/Mikel_Arteta_2021.jpg');
-      background-size: cover;
-      background-blend-mode: overlay;
-      background-color: rgba(0, 0, 0, 0.85);
+      background-size: cover, cover, cover;
+      background-repeat: no-repeat;
+      background-position: top left, top right;
+      background-attachment: fixed;
       color: #fff;
       text-align: center;
     }
 
     header {
-      background: rgba(0,0,0,0.8);
+      background-color: #37003C;
       padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    header h1 {
+    header img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .header-text {
+      flex-grow: 1;
+    }
+
+    .header-text h1 {
       margin: 0;
       color: #FFD700;
+      font-size: 28px;
+    }
+
+    .header-text p {
+      margin: 5px 0 0;
+      color: #ccc;
     }
 
     #searchBar {
@@ -46,11 +67,11 @@
     }
 
     .jersey-card {
-      background-color: rgba(30,30,30,0.95);
+      background-color: rgba(0,0,0,0.85);
       border-radius: 10px;
       padding: 15px;
       width: 220px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      box-shadow: 0 0 8px rgba(255,255,255,0.1);
     }
 
     .jersey-card img {
@@ -62,11 +83,13 @@
     .jersey-card h3 {
       margin-top: 10px;
       font-size: 18px;
+      color: #FFD700;
     }
 
     .jersey-card p {
-      margin: 5px 0;
+      margin: 4px 0;
       font-size: 14px;
+      color: #ccc;
     }
 
     .buy-btn {
@@ -98,14 +121,22 @@
       .jersey-card {
         width: 90%;
       }
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>JerseyHub Nairobi</h1>
-    <p>Official EPL Jerseys | Order from Kahawa Sukari</p>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League Logo">
+    <div class="header-text">
+      <h1>JerseyHub Nairobi</h1>
+      <p>Official EPL Jerseys | Based in Kahawa Sukari</p>
+    </div>
   </header>
 
   <input type="text" id="searchBar" placeholder="Search by team or color...">
@@ -122,7 +153,7 @@
     </div>
 
     <div class="jersey-card" data-club="Manchester United" data-color="Red">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Manchester_United_2023-24_jersey.png" alt="Manchester United Jersey">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Manchester_United_2023-24_jersey.png" alt="Man United Jersey">
       <h3>Manchester United</h3>
       <p>Color: Red</p>
       <p>Price: Ksh 3,000</p>
@@ -142,11 +173,11 @@
     </div>
 
     <div class="jersey-card" data-club="Manchester City" data-color="Sky Blue">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Manchester_City_2023-24_home_kit.png" alt="Manchester City Jersey">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Manchester_City_2023-24_home_kit.png" alt="Man City Jersey">
       <h3>Manchester City</h3>
       <p>Color: Sky Blue</p>
       <p>Price: Ksh 3,000</p>
-      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Manchester%20City%20jersey" target="_blank">
+      <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Man%20City%20jersey" target="_blank">
         <button class="buy-btn">Buy on WhatsApp</button>
       </a>
     </div>
@@ -160,15 +191,12 @@
         <button class="buy-btn">Buy on WhatsApp</button>
       </a>
     </div>
-
-    <!-- Add more jerseys as needed -->
-
   </section>
 
   <footer>
-    Website developed by <a href="mailto:karaniwahome@gmail.com">karaniwahome@gmail.com</a> |
+    Website by <a href="mailto:karaniwahome@gmail.com">karaniwahome@gmail.com</a> |
     <a href="https://twitter.com/tonibraxxxxx" target="_blank">@tonibraxxxxx</a><br>
-    Background: Pep Guardiola & Mikel Arteta | Based in Kahawa Sukari ⚽
+    Background: Pep Guardiola & Mikel Arteta | PL logo © EPL
   </footer>
 
   <script>
