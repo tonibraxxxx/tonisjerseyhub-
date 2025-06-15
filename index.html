@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JerseyHub Kahawa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffffff, #e8f0ff);
+    }
+
+    header {
+      background: linear-gradient(to right, black, red, green);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .jersey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .jersey-card {
+      border-radius: 10px;
+      padding: 15px;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .jersey-card:hover {
+      transform: scale(1.05);
+    }
+
+    .jersey-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .buy-btn {
+      margin-top: 10px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #000;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>JerseyHub Kahawa</h1>
+  <p>Authentic EPL Jerseys – Nairobi, Kahawa Sukari 🇰🇪</p>
+</header>
+
+<div class="jersey-grid">
+
+  <div class="jersey-card" style="background-color: #e74c3c;">
+    <img src="https://via.placeholder.com/200x150?text=Arsenal" alt="Arsenal Jersey">
+    <h3>Arsenal</h3>
+    <p>Color: Red & White</p>
+    <p>Price: Ksh 3,000</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="jersey-card" style="background-color: #1e90ff;">
+    <img src="https://via.placeholder.com/200x150?text=Chelsea" alt="Chelsea Jersey">
+    <h3>Chelsea</h3>
+    <p>Color: Blue</p>
+    <p>Price: Ksh 3,000</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="jersey-card" style="background-color: #f39c12;">
+    <img src="https://via.placeholder.com/200x150?text=Wolves" alt="Wolves Jersey">
+    <h3>Wolves</h3>
+    <p>Color: Gold & Black</p>
+    <p>Price: Ksh 3,000</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="jersey-card" style="background-color: #bd10e0;">
+    <img src="https://via.placeholder.com/200x150?text=Man+City" alt="Man City Jersey">
+    <h3>Man City</h3>
+    <p>Color: Sky Blue</p>
+    <p>Price: Ksh 3,000</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="jersey-card" style="background-color: #2c3e50;">
+    <img src="https://via.placeholder.com/200x150?text=Newcastle" alt="Newcastle Jersey">
+    <h3>Newcastle</h3>
+    <p>Color: Black & White</p>
+    <p>Price: Ksh 3,000</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <!-- Add more jerseys below if you want -->
+
+</div>
+
+</body>
+</html>
+Add homepage for JerseyHub Kahawa
