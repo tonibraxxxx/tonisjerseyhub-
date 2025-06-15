@@ -3,210 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toni's Jersey Hub Nairobi</title>
+  <title>Toni’s Jersey Hub Nairobi</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      margin: 0;
+      background-color: #f5f5f5;
     }
-
     header {
-      background: #37003c;
+      background-color: #37003c;
       color: white;
-      padding: 1em;
+      padding: 20px;
       text-align: center;
     }
-
     header img {
-      width: 50px;
+      height: 40px;
       vertical-align: middle;
     }
-
-    header h1 {
-      display: inline;
-      margin-left: 10px;
-      font-size: 1.6em;
-    }
-
     .search-bar {
-      text-align: center;
-      margin: 1em 0;
-    }
-
-    .search-bar input {
-      padding: 10px;
       width: 80%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
     }
-
-    .jersey-container {
+    .search-bar input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 10px;
     }
-
     .jersey-card {
-      width: 250px;
+      width: 300px;
       margin: 10px;
       padding: 10px;
-      border-radius: 12px;
+      border-radius: 10px;
       color: white;
       text-align: center;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      background-size: cover;
+      background-position: center;
     }
-
     .jersey-card img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      border-radius: 10px;
     }
-
-    .order-links {
+    .buy-button {
       margin-top: 10px;
-    }
-
-    .order-links a {
-      display: inline-block;
-      margin: 5px;
-      text-decoration: none;
+      background: green;
+      padding: 10px;
       color: white;
-      padding: 8px 12px;
-      background-color: #28a745;
-      border-radius: 6px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
     }
-
-    footer {
+    .cart {
+      background: #fff;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .cart h2 {
+      text-align: center;
+    }
+    .cart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart li {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
       background: #37003c;
       color: white;
-      text-align: center;
-      padding: 1em;
-      margin-top: 40px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-size: 16px;
+      cursor: pointer;
     }
-
-    @media (max-width: 600px) {
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+    .whatsapp-icon {
+      margin-top: 14px;
+    }
+    footer {
+      background-color: #37003c;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
       .jersey-card {
         width: 90%;
-        display: inline-block;
       }
     }
   </style>
-  <script>
-    function filterJerseys() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.getElementsByClassName('jersey-card');
-      Array.from(cards).forEach(card => {
-        const title = card.getElementsByTagName('h3')[0].textContent.toLowerCase();
-        card.style.display = title.includes(input) ? 'block' : 'none';
-      });
-    }
-  </script>
 </head>
 <body>
-
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="EPL Logo" />
-    <h1>Toni's Jersey Hub Nairobi</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="PL Logo">
+    <h1>Toni’s Jersey Hub Nairobi</h1>
+    <p>Official Jerseys from Top Football Leagues</p>
   </header>
 
   <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Search by club or league..." onkeyup="filterJerseys()" />
+    <input type="text" id="searchInput" onkeyup="filterJerseys()" placeholder="Search club or league...">
   </div>
 
-  <div class="jersey-container">
-
-    <!-- Arsenal -->
-    <div class="jersey-card" style="background: #EF0107;">
-      <h3>Arsenal (EPL)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arsenal_FC_home_jersey_2023-24.png" alt="Arsenal Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Arsenal%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Man City -->
-    <div class="jersey-card" style="background: #6CABDD;">
-      <h3>Man City (EPL)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Manchester_City_home_jersey_2023-24.png" alt="Man City Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Man%20City%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Barcelona -->
-    <div class="jersey-card" style="background: #A50044;">
-      <h3>Barcelona (La Liga)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Barcelona_home_jersey_2023.png" alt="Barcelona Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Barcelona%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Juventus -->
-    <div class="jersey-card" style="background: #000000;">
-      <h3>Juventus (Serie A)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Juventus_jersey_2023.png" alt="Juventus Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Juventus%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- PSG -->
-    <div class="jersey-card" style="background: #004170;">
-      <h3>PSG (Ligue 1)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/PSG_home_jersey_2023.png" alt="PSG Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20PSG%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Inter Miami -->
-    <div class="jersey-card" style="background: #F5B7B1;">
-      <h3>Inter Miami (MLS)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Inter_Miami_jersey_2023.png" alt="Inter Miami Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Inter%20Miami%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Bayern Munich -->
-    <div class="jersey-card" style="background: #DC052D;">
-      <h3>Bayern Munich (Bundesliga)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Bayern_Munich_home_jersey_2023.png" alt="Bayern Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Bayern%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
-    <!-- Dortmund -->
-    <div class="jersey-card" style="background: #FDE100;">
-      <h3>Dortmund (Bundesliga)</h3>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Borussia_Dortmund_home_jersey_2023.png" alt="Dortmund Jersey">
-      <div class="order-links">
-        <a href="https://wa.me/254758454074?text=I'm%20interested%20in%20the%20Dortmund%20jersey">WhatsApp</a>
-        <a href="#">Pay with MPesa</a>
-      </div>
-    </div>
-
+  <div class="container" id="jerseyContainer">
+    <!-- Jersey Cards -->
   </div>
+
+  <div class="cart" id="cartSection">
+    <h2>🛒 Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p><strong>Total:</strong> Ksh <span id="cartTotal">0</span></p>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+  </div>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/254758454074?text=Hi%20Toni,%20I%20want%20to%20order%20a%20jersey" class="whatsapp-float" target="_blank">
+    <div class="whatsapp-icon">💬</div>
+  </a>
 
   <footer>
-    <p>&copy; 2025 Toni's Jersey Hub Nairobi</p>
-    <p>Developer: <a href="mailto:karaniwahome@gmail.com" style="color: #fff;">karaniwahome@gmail.com</a></p>
-    <p>Twitter: <a href="https://twitter.com/tonibraxxxxx" style="color: #fff;">@tonibraxxxxx</a></p>
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League Logo" style="width:50px; margin-top:10px;">
+    <p>&copy; 2025 Toni’s Jersey Hub Nairobi. All rights reserved.</p>
+    <p>Website developed by <a href="mailto:karaniwahome@gmail.com" style="color:#ccc;">karaniwahome@gmail.com</a></p>
+    <p>Twitter: <a href="https://twitter.com/tonibraxxxxx" target="_blank" style="color:#ccc;">@tonibraxxxxx</a></p>
   </footer>
 
+  <script>
+    const products = [
+      {
+        name: "Arsenal FC (Premier League)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Arsenal_FC_home_jersey_2023-24.png",
+        logo: "https://1000logos.net/wp-content/uploads/2017/03/Arsenal-Logo.png",
+        price: 2500
+      },
+      {
+        name: "Manchester United (Premier League)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Manchester_United_home_jersey_2023-24.png",
+        logo: "https://1000logos.net/wp-content/uploads/2017/03/Manchester-United-Logo.png",
+        price: 2600
+      },
+      {
+        name: "Paris Saint-Germain (Ligue 1)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/PSG_jersey_2023.png",
+        logo: "https://1000logos.net/wp-content/uploads/2017/04/PSG-logo.png",
+        price: 2400
+      },
+      {
+        name: "Juventus (Serie A)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Juventus_home_jersey_2023.png",
+        logo: "https://1000logos.net/wp-content/uploads/2017/04/Juventus-logo.png",
+        price: 2500
+      },
+      {
+        name: "Real Madrid (La Liga)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Real_Madrid_home_jersey_2023-24.png",
+        logo: "https://1000logos.net/wp-content/uploads/2017/03/Real-Madrid-logo.png",
+        price: 2700
+      },
+      {
+        name: "Inter Miami (MLS)",
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Inter_Miami_CF_jersey_2023.png",
+        logo: "https://upload.wikimedia.org/wikipedia/en/d/d2/Inter_Miami_CF_logo.svg",
+        price: 2300
+      }
+    ];
+
+    const jerseyContainer = document.getElementById("jerseyContainer");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+    let cart = [];
+
+    function displayJerseys() {
+      products.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "jersey-card";
+        card.style.backgroundImage = `url('${product.logo}')`;
+        card.innerHTML = `
+          <h3>${product.name}</h3>
+          <img src="${product.image}" alt="${product.name}" />
+          <p>Ksh ${product.price}</p>
+          <button class="buy-button" onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+        `;
+        jerseyContainer.appendChild(card);
+      });
+    }
+
+    function addToCart(product) {
+      cart.push(product);
+      updateCart();
+    }
+
+    function updateCart() {
+      cartItems.innerHTML = "";
+      let total = 0;
+      cart.forEach((item, i) => {
+        total += item.price;
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - Ksh ${item.price}`;
+        cartItems.appendChild(li);
+      });
+      cartTotal.textContent = total;
+    }
+
+    function checkout() {
+      alert("Pay with MPESA:\nLipa na Pochi\nNumber: 0758454074\nTotal: Ksh " + cartTotal.textContent);
+    }
+
+    function filterJerseys() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".jersey-card");
+      cards.forEach(card => {
+        const name = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+
+    displayJerseys();
+  </script>
 </body>
 </html>
